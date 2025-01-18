@@ -1301,6 +1301,7 @@ body {
     }
     .layer p {
         line-height: normal;
+        letter-spacing: normal;
     }
 
     /*service*/
