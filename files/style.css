@@ -280,10 +280,18 @@ body {
 }
 
 .sec {
+
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     padding-bottom: 0px;
 }
+/* @media (max-width: 1409px){
+    .sec{
+        flex-direction: column;
+        
+    }
+} */
+
 
 .container1 {
     width: 600px;
@@ -296,6 +304,11 @@ body {
     max-height: 500px;
     padding: 10px;
     margin-left: 100px;
+}
+@media (max-width: 1409px){
+    .container2{
+        padding-top: 800px;
+    }
 }
 
 .heading1 {
@@ -1334,8 +1347,3 @@ body {
         color: #000;
     }
 }
-
-
-
-
-
