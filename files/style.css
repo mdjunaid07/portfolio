@@ -517,7 +517,7 @@ body {
     transform: translate(-50%, -50%);
     font-size: 17px;
     font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
+    animation: showText 0.5s 20s linear forwards;
     opacity: 0;
 }
 
