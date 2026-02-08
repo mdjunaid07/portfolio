@@ -263,6 +263,10 @@ body {
 
 
 
+
+
+
+
 .education-section {
   background: #000;
   color: #fff;
@@ -292,6 +296,7 @@ body {
   margin: auto;
 }
 
+
 /* Vertical line */
 .education-container::before {
   content: "";
@@ -312,6 +317,7 @@ body {
   box-sizing: border-box;
   animation: fadeUp 0.8s ease forwards;
 }
+
 
 /* Alternate sides */
 .edu-card:nth-child(odd) {
@@ -347,6 +353,10 @@ body {
   padding: 20px;
   font-size: 19px;
   line-height: 1.6;
+}
+.edu-content:hover{
+      transform: translateY(-6px);
+  box-shadow: 0 0 15px cyan;
 }
 
 .edu-content h3 {
@@ -1397,13 +1407,12 @@ body {
 
 
 .whatsapp-float {
-    position: fixed;
+   position: fixed;
     bottom: 20px;
-    left: 290px;
+    right: 20px;   /* keeps it at bottom-right on all devices */
     width: 55px;
     height: 55px;
-    background: rgb(0, 0, 0);
-    color: #000000;
+    background: #000;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1411,17 +1420,19 @@ body {
     font-size: 26px;
     text-decoration: none;
     z-index: 999;
-    /* border-color: cyan; */
-    border: 2px;
     border: 2px solid cyan;
 
 }
+
+.whatsapp-float:hover {
+    box-shadow: 0 0 12px cyan;
+}
 /* Hide on desktop */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .whatsapp-float {
         display: none;
     }
-}
+} */
 
 /* Show on mobile */
 @media screen and (max-width: 767px) {
@@ -1429,5 +1440,4 @@ body {
         display: flex;
     }
 }
-
 
