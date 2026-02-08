@@ -262,6 +262,154 @@ body {
 }
 
 
+
+.education-section {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 10%;
+  position: relative;
+}
+
+.edu-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+  color: rgb(255, 255, 255);
+}
+.edu-title span {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+  color: cyan;
+}
+
+/* Timeline container */
+.education-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Vertical line */
+.education-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: cyan;
+  transform: translateX(-50%);
+}
+
+/* Card */
+.edu-card {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Alternate sides */
+.edu-card:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.edu-card:nth-child(even) {
+  left: 50%;
+}
+
+/* Dot */
+.edu-dot {
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  width: 18px;
+  height: 18px;
+  background: cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 10px cyan;
+}
+
+.edu-card:nth-child(even) .edu-dot {
+  left: -10px;
+}
+
+/* Content box */
+.edu-content {
+  background: #050505;
+  border: 2px solid cyan;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.edu-content h3 {
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE DESIGN */
+@media (max-width: 768px) {
+
+  .education-container::before {
+    left: 10px;
+  }
+
+  .edu-card {
+    width: 100%;
+    padding-left: 40px;
+    margin-bottom: 30px;
+    text-align: left !important;
+    left: 0 !important;
+  }
+
+  .edu-dot {
+    left: 2px !important;
+    right: auto;
+  }
+
+  .edu-title {
+    font-size: 32px;
+  }
+
+  .edu-content {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* skills section */
 
 .skills-section {
