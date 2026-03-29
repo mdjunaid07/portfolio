@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="auth-container">
+        <div class="glass-card">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p id="loginError" class="error-msg"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="dashboard-container" style="display: none;">
+        <nav class="sidebar">
+            <h2>Admin<span>Panel</span></h2>
+            <ul>
+                <li class="active"><i class='bx bx-message-square-detail'></i> Messages</li>
+                <li><a href="#" id="logoutBtn"><i class='bx bx-log-out'></i> Logout</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <div class="header">
+                <h3>Contact Messages</h3>
+                <button id="deleteAllBtn" class="btn-danger"><i class='bx bx-trash'></i> Delete All</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="messagesTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messagesBody">
+                        <!-- Messages populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Authentication Container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.glass-card {
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    text-align: center;
+}
+
+.glass-card h2 {
+    color: #0ef;
+    margin-bottom: 30px;
+}
+
+.glass-card input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+    background: #1a1a1a;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.glass-card input:focus {
+    box-shadow: 0 0 8px cyan;
+}
+
+.glass-card button {
+    width: 100%;
+    padding: 12px;
+    background: #0ef;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.glass-card button:hover {
+    box-shadow: 0 0 15px cyan;
+    transform: translateY(-2px);
+}
+
+.error-msg {
+    color: #ff3333;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #111;
+    padding: 30px 20px;
+    border-right: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.sidebar h2 span {
+    color: #0ef;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar ul li a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar ul li.active {
+    background: rgba(0, 255, 255, 0.1);
+    color: #0ef;
+    border-left: 4px solid #0ef;
+}
+
+.sidebar ul li:hover:not(.active) {
+    background: #1a1a1a;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.btn-danger {
+    padding: 10px 20px;
+    background: #ff3333;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background: #cc0000;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+}
+
+.table-container {
+    background: #111;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+}
+
+th {
+    color: #0ef;
+    font-weight: 500;
+    background: #0f0f0f;
+}
+
+tr:hover {
+    background: #1a1a1a;
+}
+
+td button.del-btn {
+    background: transparent;
+    color: #ff3333;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+td button.del-btn:hover {
+    color: #ff6666;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    }
+}
