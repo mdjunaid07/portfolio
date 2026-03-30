@@ -1,4 +1,4 @@
-const API_URL = 'https://portfolio-1h1x.onrender.com/api/messages';
+const API_URL = 'https://portfolio-1h1x.onrender.com/api';
 
 // DOM Elements
 const loginSection = document.getElementById('loginSection');
