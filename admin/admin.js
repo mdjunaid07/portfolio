@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://portfolio-1h1x.onrender.com/api/messages';
 
 // DOM Elements
 const loginSection = document.getElementById('loginSection');
@@ -81,7 +81,7 @@ async function fetchMessages(token) {
 // Render Table
 function renderTable(messages) {
     messagesBody.innerHTML = '';
-    
+
     if (messages.length === 0) {
         messagesBody.innerHTML = `<tr><td colspan="6" style="text-align:center;">No messages found.</td></tr>`;
         return;
@@ -90,7 +90,7 @@ function renderTable(messages) {
     messages.forEach(msg => {
         const tr = document.createElement('tr');
         const date = new Date(msg.createdAt).toLocaleDateString();
-        
+
         tr.innerHTML = `
             <td>${date}</td>
             <td>${msg.name}</td>
@@ -110,14 +110,14 @@ function renderTable(messages) {
 // Delete Single Message
 async function deleteMessage(id) {
     if (!confirm('Are you sure you want to delete this message?')) return;
-    
+
     const token = localStorage.getItem('adminToken');
     try {
         const res = await fetch(`${API_URL}/admin/messages/${id}`, {
             method: 'DELETE',
             headers: { 'Authorization': `Bearer ${token}` }
         });
-        
+
         if (res.ok) {
             fetchMessages(token);
         } else {
@@ -132,14 +132,14 @@ async function deleteMessage(id) {
 if (deleteAllBtn) {
     deleteAllBtn.addEventListener('click', async () => {
         if (!confirm('WARNING: Are you sure you want to delete ALL messages?')) return;
-        
+
         const token = localStorage.getItem('adminToken');
         try {
             const res = await fetch(`${API_URL}/admin/messages`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
-            
+
             if (res.ok) {
                 fetchMessages(token);
             } else {

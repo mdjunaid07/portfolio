@@ -1,19 +1,19 @@
 
 var typed = new Typed(".text", {
-    strings: ["Programming" , "Cybersecurity" , "Web Development", "Artificial Intelligence"],
-    typeSpeed:100,
-    backSpeed:100,
-    backDelay:1000,
-    loop:true
+    strings: ["Programming", "Cybersecurity", "Web Development", "Artificial Intelligence"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
 });
 
 
 const toTop = document.querySelector(".top");
-window.addEventListener("scroll",() =>{
-    if (window.pageYOffset > 100){
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 100) {
         toTop.classList.add("active");
     }
-    else{
+    else {
         toTop.classList.remove("active");
     }
 })
@@ -23,7 +23,7 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const submitBtn = document.getElementById('submitBtn');
         const formMessage = document.getElementById('formMessage');
         const name = document.getElementById('name').value;
@@ -34,7 +34,7 @@ if (contactForm) {
         submitBtn.innerText = 'Sending...';
 
         try {
-            const res = await fetch('http://localhost:5000/api/messages', {
+            const res = await fetch('https://portfolio-1h1x.onrender.com/api/messages', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ if (contactForm) {
         }
 
         submitBtn.innerText = 'Send Message';
-        
+
         setTimeout(() => {
             formMessage.style.display = 'none';
         }, 5000);
