@@ -65,6 +65,25 @@ Since the frontend consists of static files (`.html`, `.css`, `.js`), you don't 
 
 ---
 
+## 📂 Backend Folder Structure
+The `backend/` directory is organized following the MVC (Model-View-Controller) architecture:
+
+- **`server.js`**: The main entry point of the server. It initializes Express, connects to MongoDB, sets up CORS (Cross-Origin Resource Sharing) security, rate limiting, and mounts the API routes.
+- **`config/db.js`**: Contains the MongoDB Atlas connection logic using Mongoose.
+- **`models/`**: Defines the data structure.
+  - `Message.js`: The Mongoose schema for the contact form submissions, detailing fields like name, email, and message.
+- **`routes/`**: Defines the API endpoints.
+  - `messageRoutes.js`: Handles POST requests from the contact form.
+  - `adminRoutes.js`: Handles authentication (login) and retrieving/deleting messages.
+- **`controllers/`**: Contains the core logic for the routes.
+  - `messageController.js`: Functions to save new messages and fetch/delete existing ones.
+  - `authController.js`: Function to verify admin credentials and generate JWT tokens.
+- **`middleware/`**: Functions that run before controllers.
+  - `authMiddleware.js`: Verifies the JWT token to protect admin routes from unauthorized access.
+- **`.env`**: Stores secret environment variables (like passwords, JWT secret, and database URI) so they are kept out of the source code.
+
+---
+
 ## 🔒 Security Notes
 - Admin routes are protected using a **JSON Web Token (JWT)**.
 - Input fields on the contact form are properly validated.
